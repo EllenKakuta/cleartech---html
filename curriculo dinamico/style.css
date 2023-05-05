@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500&display=swap');
+
+:root{
+    --fonte001: Arial, Helvetica, sans-serif;
+    --fonte002: 'Bruno Ace SC', cursive;
+    --fonte003:'Dosis', sans-serif;
+}
+
+body{
+    background-image: url('imagens/imagem001.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Estilo para o cabeçalho */
+header{
+  
+    border-radius: 8px;
+    background-color:#595D6B;
+    box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
+    
+}
+
+/* Estilo para texto do cabeçalho */
+header >h1{
+    font-family: var(--fonte002);
+    font-size: 2.5em;
+    text-shadow: 1px 1px 5px #A3C3FF; 	
+	color: #fff;
+	padding: 40px;
+	text-align: center;
+   
+   
+    
+}
+
+/* Estilo para as seções */
+section {
+	margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 20px;
+	padding: 10px;
+    min-width: 300px;
+    max-width: 1000px;
+  	background-color: #C6CEEE;
+	border-radius: 5px;
+    box-shadow: 1px 1px 19px black;
+}
+
+section > h2{ /*cabeçalho da seção*/
+    font-family: var(--fonte002);
+    font-size: 1.5em;
+    color:#39446B;
+}
+
+/* Estilo para nome dos campos -  */
+label {
+    font-family: var(--fonte003);
+    font-size: 1em;
+	display: block;
+  	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+/* Estilo para os campos de entrada */
+input, textarea {
+	display: block;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+
+/* Estilo para as mensagens de erro */
+input:invalid, textarea:invalid {
+	border-color: #af0707da;
+    box-shadow: 1px 1px 10px #636873;
+}
+
+input:valid, textarea:valid {
+	border-color: #03634be0;
+    box-shadow: 1px 1px 50px #b8bbc0a2;
+}
+
+footer{
+    border-radius: 5px;
+    background-color: #595D6B;
+    color: #A3C3FF;
+    text-align: right;
+    font-family: var(--fonte002);
+    box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
+}
