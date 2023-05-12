@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construtor de Currículo</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+	    <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -13,91 +13,123 @@
     <h1>Construtor de Currículo</h1>
     </header>
 		<main>
-			<section>
+			<div class="informacoes-pessoais">
 				<h2>Informações Pessoais</h2>
 				<form id="info-pessoal">
-					<label for="nome">Nome:</label>
-					<input type="text" id="nome" name="nome" required>
+					
+					<!--<label for="nome">Nome:</label>-->
+					<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="inputs required"  oninput="nameValidate()">
+					<span class="span-required">Nome deve ter no mínimo 5 caracteres</span>
+					
 
-					<label for="email">E-mail:</label>
-					<input type="email" id="email" name="email" required>
+				
+					<!--<label for="email">E-mail:</label>-->
+					<input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" class="inputs required" oninput="emailValidate()" >
+					<span class="span-required">Digite um e-mail válido</span>
+					
 
-					<label for="fone">Telefone:</label>
-					<input type="tel" id="fone" name="fone" required>
+				
+					<!--<label for="fone">Telefone:</label>-->
+					<input type="tel" id="fone" name="fone" placeholder="Informe seu melhor número para contato" class="inputs required" oninput="telValidate()">
+					<span class="span-required">Digite um telefone válido</span>
+					
 
-					<label for="endereco">Endereço:</label>
-					<input type="text" id="endereco" name="endereco" required>
+					<!--<label for="endereco">Endereço:</label>
+					<input type="text" id="endereco" name="endereco" >-->
 
-					<label for="website">Website:</label>
-					<input type="url" id="website" name="website">
+					<!-- <label for="website">Website:</label> -->
+					<input type="url" id="website" name="website" placeholder="Redes Sociais: LinkedIn, Twitter, Facebook, Instagram.." class="inputs">
 
                     <label for="foto"> Foto</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
                     <img id= "photo-preview" src="#" alt="Preview da foto" style="display:none">
-				</form>
-			</section>
 
-			<section>
+					<button type="button" id="add-dados" class="add-botao">Adicionar</button>
+				</form>
+			</div>
+
+			<div class="experiencia">
 				<h2>Experiência Profissional</h2>
 				<form id="exp-profissional">
 					<label for="cargo">Cargo:</label>
-					<input type="text" id="cargo" name="cargo" required>
+					<input type="text" id="cargo" name="cargo" >
 
 					<label for="empresa">Empresa:</label>
-					<input type="text" id="empresa" name="empresa" required>
+					<input type="text" id="empresa" name="empresa" >
+
+					<section>
+						<label for="data-inicio">Início:</label>
+						<input type="date" id="data-inicio" name="data-inicio">
+						<label for="data-termino">Término:</label>
+						<input type="date" id="data-termino" name="data-termino" >
+					</section>
+
+					<label for="descricao-cargo">Descrição do Cargo:</label>
+					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"></textarea>
+
+					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>
+				
+				</form>
+			</div>
+
+            <div>
+                <h2>Escolaridade</h2>
+                <form id="escolaridade">
+                    <label for="instituicao">Instituição de Ensino</label>
+                    <input type="text" name="instituicao" id="instituicao" required>
+
+                    <section>
+						<label for="data-inicio">Início:</label>
+						<input type="date" id="data-inicio" name="data-inicio" required>
+						<label for="data-termino">Término:</label>
+						<input type="date" id="data-termino" name="data-termino" required>
+					</section>
+
+                    <button type="button" id="add-escolaridade" class="add-botao">Adicionar</button>
+                </form>
+            </div>
+
+			<div>
+				<h2>Cursos</h2>
+				<form id="cursos">
+					<label for="curso-nome">Nome do Curso:</label>
+					<input type="text" id="curso-nome" name="curso-nome" required>
 
 					<label for="data-inicio">Data de Início:</label>
 					<input type="date" id="data-inicio" name="data-inicio" required>
 
 					<label for="data-termino">Data de Término:</label>
 					<input type="date" id="data-termino" name="data-termino" required>
-
-					<label for="descricao-cargo">Descrição do Cargo:</label>
-					<textarea id="descricao-cargo" name="descricao-cargo" required></textarea>
-
-					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar Experiência</button>
-
-					
-				</form>
-			</section>
-
-            <section>
-                <h2>Escolaridade</h2>
-                <form id="escolaridade">
-                    <label for="instituicao">Instituição de Ensino</label>
-                    <input type="text" name="instituicao" id="instituicao" required>
-
-                    <label for="data-inicio">Data de Início:</label>
-					<input type="date" id="data-inicio" name="data-inicio" required>
-
-					<label for="data-termino">Data de Término:</label>
-					<input type="date" id="data-termino" name="data-termino" required>
-
-                    <button type="button" id="add-escolaridade" class="add-botao">Adicionar Escolaridade</button>
+                 				
+					<button type="button" id="add-curso" class="add-botao">Adicionar</button>
                 </form>
-            </section>
-			<section>
-				<h2>Cursos/Competências</h2>
-				<form id="habilidades">
-					<label for="hab-nome">Nome do Curso/Competência:</label>
-					<input type="text" id="hab-nome" name="hab-nome" required>
+            </div>
 
-					<label for="hab-nivel">Nível da Habilidade:</label>
-					<select id="hab-nivel" name="hab-nivel" required>
+			<div>
+				<h2>Idiomas</h2>
+				<form id="idiomas">
+					<label for="idioma-nome">Idioma:</label>
+					<input type="text" id="idioma-nome" name="idioma-nome">
+
+					<label for="idioma-nivel">Nível:</label>
+					<select id="idioma-nivel" name="idioma-nivel" required>
 						<option value="">-- Selecione --</option>
 						<option value="Iniciante">Iniciante</option>
 						<option value="Intermediário">Intermediário</option>
 						<option value="Avançado">Avançado</option>
 					</select>
 
-					<button type="button" id="add-hab" required>Adicionar Habilidade</button>
+					<button type="button" id="add-idioma" class="add-botao">Adicionar</button>
                 </form>
-            </section>
+            </div>
+			<section class="botao"><button id="salvar" type="submit">Gerar Currículo</button></section>
+			
+			
             <footer>
-                <p>EKD</p>
+                <p>&#169;Copyright EKD 2023</p>
             </footer>
         </main>
-                
+	<script src="dados.js"></script>          
                
 </body>
 </html>

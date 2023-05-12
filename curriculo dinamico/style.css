@@ -11,9 +11,12 @@
 }
 
 body{
+    background-color: black;
     background-image: url('imagens/imagem001.jpg');
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
+  
 }
 
 /* Estilo para o cabeçalho */
@@ -32,14 +35,11 @@ header >h1{
     text-shadow: 1px 1px 5px #A3C3FF; 	
 	color: #fff;
 	padding: 40px;
-	text-align: center;
-   
-   
-    
+	text-align: center;  
 }
 
-/* Estilo para as seções */
-section {
+/* Estilo para as divs */
+div {
 	margin-left: auto;
     margin-right: 100px;
     margin-bottom: 20px;
@@ -51,10 +51,42 @@ section {
     box-shadow: 1px 1px 19px black;
 }
 
-section > h2{ /*cabeçalho da seção*/
+.span-required{
+    font-size: 1em;
+    margin: 1px 0 0 0px;
+    display: none;
+    color: red;
+}
+
+
+div section {
+    display:flex;
+    justify-content: space-evenly;
+    gap: 2rem;     
+}
+
+div > h2{ /*cabeçalho da div*/
     font-family: var(--fonte002);
     font-size: 1.5em;
     color:#39446B;
+}
+
+
+.inputs{
+    padding: 7px 4px;
+    outline: none;
+    background-color:  #dee3ec91;
+    border: 2px solid 595D6B;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    transition: .4s;
+}
+
+
+.inputs:focus{
+    border-color: rgb(228, 215, 32);
+    border-width: 2.5px;
 }
 
 /* Estilo para nome dos campos -  */
@@ -79,7 +111,7 @@ input, textarea {
 
 
 
-/* Estilo para as mensagens de erro */
+/* Estilo para as mensagens de erro
 input:invalid, textarea:invalid {
 	border-color: #af0707da;
     box-shadow: 1px 1px 10px #636873;
@@ -88,13 +120,47 @@ input:invalid, textarea:invalid {
 input:valid, textarea:valid {
 	border-color: #03634be0;
     box-shadow: 1px 1px 50px #b8bbc0a2;
+} */
+
+button[type="submit"]{
+    padding: 1em;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: 0px 0px 19px black;
+}
+
+button[type="submit"]:hover{
+    background-color: #055713;
+    font-weight: bolder;
+    font-size: 1.2em;
+    
+}
+
+.botao{
+    text-align: right;
+}
+
+button:hover{
+    transition: .9s;
+    border-color: yellow;
+    cursor: pointer;
 }
 
 footer{
     border-radius: 5px;
     background-color: #595D6B;
+    box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
+    padding: 2px;
+}
+
+footer p{
     color: #A3C3FF;
     text-align: right;
     font-family: var(--fonte002);
-    box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
+    margin-right: 3%;
+   
 }
