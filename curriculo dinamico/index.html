@@ -7,19 +7,20 @@
     <title>Construtor de Currículo</title>
 	    <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+		
 </head>
 <body>
     <header>
     <h1>Construtor de Currículo</h1>
     </header>
 		<main>
-			<div class="informacoes-pessoais">
+			<div class="output">
 				<h2>Informações Pessoais</h2>
 				<form id="info-pessoal">
 					
 					<!--<label for="nome">Nome:</label>-->
 					<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="inputs required"  oninput="nameValidate()">
-					<span class="span-required">Nome deve ter no mínimo 5 caracteres</span>
+					<span class="span-required">Nome deve ter no mínimo 10 caracteres</span>
 					
 
 				
@@ -34,21 +35,22 @@
 					<span class="span-required">Digite um telefone válido</span>
 					
 
-					<!--<label for="endereco">Endereço:</label>
-					<input type="text" id="endereco" name="endereco" >-->
+					<!-- <label for="endereco">Localidade:</label> -->
+					<input type="text" id="localidade" name="localidade" placeholder="Informe sua localidade (Cidade e Estado)" class="inputs required">
+					<span class="span-required">Informe sua localidade (Cidade e Estado)</span>
 
 					<!-- <label for="website">Website:</label> -->
-					<input type="url" id="website" name="website" placeholder="Redes Sociais: LinkedIn, Twitter, Facebook, Instagram.." class="inputs">
+					<input type="url" id="website" name="website" placeholder="Informe seu linkedIn, caso possua.." class="inputs required" oninput="urlValidate()">
+					<span class="span-required">Digite uma URL válida</span>
 
                     <label for="foto"> Foto</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
                     <img id= "photo-preview" src="#" alt="Preview da foto" style="display:none">
-
-					<button type="button" id="add-dados" class="add-botao">Adicionar</button>
+					
 				</form>
-			</div>
+			</div class="output">
 
-			<div class="experiencia">
+			<div id="experiencia">
 				<h2>Experiência Profissional</h2>
 				<form id="exp-profissional">
 					<label for="cargo">Cargo:</label>
@@ -63,6 +65,11 @@
 						<label for="data-termino">Término:</label>
 						<input type="date" id="data-termino" name="data-termino" >
 					</section>
+					
+					<section>
+						<label for="emprego-atual">Emprego atual</label>
+						<input type="checkbox" id="emprego-atual" name="emprego-atual">
+					</section>	
 
 					<label for="descricao-cargo">Descrição do Cargo:</label>
 					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"></textarea>
@@ -70,7 +77,7 @@
 					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>
 				
 				</form>
-			</div>
+			</div class="output">
 
             <div>
                 <h2>Escolaridade</h2>
@@ -80,32 +87,32 @@
 
                     <section>
 						<label for="data-inicio">Início:</label>
-						<input type="date" id="data-inicio" name="data-inicio" required>
-						<label for="data-termino">Término:</label>
-						<input type="date" id="data-termino" name="data-termino" required>
+						<input type="date" id="data-inicioesc" name="data-inicioesc" required>
+						<label for="data-terminoesc">Término:</label>
+						<input type="date" id="data-terminoesc" name="data-terminoesc" required>
 					</section>
 
-                    <button type="button" id="add-escolaridade" class="add-botao">Adicionar</button>
+                    <!-- <button type="button" id="add-escolaridade" class="add-botao">Adicionar</button> -->
                 </form>
             </div>
 
-			<div>
+			<div class="output">
 				<h2>Cursos</h2>
 				<form id="cursos">
 					<label for="curso-nome">Nome do Curso:</label>
 					<input type="text" id="curso-nome" name="curso-nome" required>
 
-					<label for="data-inicio">Data de Início:</label>
-					<input type="date" id="data-inicio" name="data-inicio" required>
+					<label for="data-inicio-curso">Data de Início:</label>
+					<input type="date" id="data-inicio-curso" name="data-inicio-curso" required>
 
-					<label for="data-termino">Data de Término:</label>
-					<input type="date" id="data-termino" name="data-termino" required>
+					<label for="data-termino-curso">Data de Término:</label>
+					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
                  				
 					<button type="button" id="add-curso" class="add-botao">Adicionar</button>
                 </form>
             </div>
 
-			<div>
+			<div class="output">
 				<h2>Idiomas</h2>
 				<form id="idiomas">
 					<label for="idioma-nome">Idioma:</label>
@@ -121,15 +128,19 @@
 
 					<button type="button" id="add-idioma" class="add-botao">Adicionar</button>
                 </form>
-            </div>
-			<section class="botao"><button id="salvar" type="submit">Gerar Currículo</button></section>
+            </div class="output">
+			<form action="">
+				<section class="botao">
+					<button id="salvar" type="submit">Gerar Currículo</button>
+				</section>
+			</form>
 			
 			
             <footer>
                 <p>&#169;Copyright EKD 2023</p>
             </footer>
         </main>
-	<script src="dados.js"></script>          
+	<script src="script.js"></script>          
                
 </body>
 </html>
