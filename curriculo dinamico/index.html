@@ -27,14 +27,11 @@
 					<!--<label for="email">E-mail:</label>-->
 					<input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" class="inputs required" oninput="emailValidate()" >
 					<span class="span-required">Digite um e-mail válido</span>
-					
-
-				
+								
 					<!--<label for="fone">Telefone:</label>-->
 					<input type="tel" id="fone" name="fone" placeholder="Informe seu melhor número para contato" class="inputs required" oninput="telValidate()">
 					<span class="span-required">Digite um telefone válido</span>
 					
-
 					<!-- <label for="endereco">Localidade:</label> -->
 					<input type="text" id="localidade" name="localidade" placeholder="Informe sua localidade (Cidade e Estado)" class="inputs required">
 					<span class="span-required">Informe sua localidade (Cidade e Estado)</span>
@@ -49,6 +46,29 @@
 					
 				</form>
 			</div class="output">
+
+			<div>
+                <h2>Formação Acadêmica</h2>
+                <form id="formacao">
+                    <label for="instituicao">Instituição de Ensino</label>
+                    <input type="text" name="instituicao" id="instituicao" required>
+
+					<label for="nome-curso">Curso</label>
+                    <input type="text" name="nome-curso" id="nome-curso" required>
+
+                    <section>
+						<label for="data-inicio-formacao">Início:</label>
+						<input type="date" id="data-inicio-formacao" name="data-inicio-formacao" required>
+						<label for="data-termino-formacao">Término:</label>
+						<input type="date" id="data-termino-formacao" name="data-termino-formacao" required>
+					</section>
+					<p>Obs: Caso formação esteja em andamento, informar data aproximada do término..</p>
+
+                 
+                </form>
+            </div>
+
+
 
 			<div id="experiencia">
 				<h2>Experiência Profissional</h2>
@@ -79,25 +99,10 @@
 				</form>
 			</div class="output">
 
-            <div>
-                <h2>Escolaridade</h2>
-                <form id="escolaridade">
-                    <label for="instituicao">Instituição de Ensino</label>
-                    <input type="text" name="instituicao" id="instituicao" required>
-
-                    <section>
-						<label for="data-inicio">Início:</label>
-						<input type="date" id="data-inicioesc" name="data-inicioesc" required>
-						<label for="data-terminoesc">Término:</label>
-						<input type="date" id="data-terminoesc" name="data-terminoesc" required>
-					</section>
-
-                    <!-- <button type="button" id="add-escolaridade" class="add-botao">Adicionar</button> -->
-                </form>
-            </div>
+            
 
 			<div class="output">
-				<h2>Cursos</h2>
+				<h2>Cursos Extracurriculares</h2>
 				<form id="cursos">
 					<label for="curso-nome">Nome do Curso:</label>
 					<input type="text" id="curso-nome" name="curso-nome" required>
@@ -108,7 +113,7 @@
 					<label for="data-termino-curso">Data de Término:</label>
 					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
                  				
-					<button type="button" id="add-curso" class="add-botao">Adicionar</button>
+					<button type="button" id="add-curso-botao" class="add-botao">Adicionar</button>
                 </form>
             </div>
 

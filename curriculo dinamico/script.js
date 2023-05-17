@@ -13,20 +13,18 @@ const dataInicio = document.getElementById("data-inicio");
 const dataTermino = document.getElementById("data-termino");
 const descricaoCargo = document.getElementById("descricao-cargo");
 const empregoAtualCheckBox = document.getElementById("emprego-atual");
-//->Escolaridade
-const escolaridade = document.getElementById("escolaridade");
-const dataInicioEsc = document.getElementById("data-inicioesc");
-const dataTerminoEsc = document.getElementById("data-terminoesc");
-//->Cursos
-const curso = document.getElementById("cursos");
+//->Formação acadêmica
+const instituicao = document.getElementById("instituicao");
+const cursoFormacao = document.getElementById("nome-curso")
+const dataInicioForm = document.getElementById("data-inicio-formacao");
+const dataTerminoForm = document.getElementById("data-termino-formacao");
+//->Cursos extracurriculares
+const curso = document.getElementById("curso-nome");
 const dataInicioCurso = document.getElementById("data-inicio-curso");
 const dataTerminoCurso = document.getElementById("data-termino-curso");
 //->Idiomas
 const idioma = document.getElementById("idioma-nome")
 const idiomaNivel = document.getElementById("idioma-nivel");
-
-//--------------------------------------------------------------------
-
 
 
 //VALIDAÇÃO DE DADOS
@@ -92,8 +90,6 @@ function urlValidate(){
     }
 }
 
-
-
 //ARRAY DE ARMAZENAMENTO DOS DADOS DA EXPERIÊNCIA PROFISSIONAL
 let experienciaProfissional = [];
 
@@ -127,11 +123,38 @@ addExperienciaBotao.addEventListener("click", function(event) {
     empregoAtualCheckBox.checked= false;
 });
 
+
+//ARRAY DE ARMAZENAMENTO DOS DADOS DE CURSOS EXTRACURRICULARES
+let cursoExtracurricular = [];
+
+const addCursoBotao = document.getElementById("add-curso-botao");
+addCursoBotao.addEventListener("click", function(event) {
+    event.preventDefault();
+    //DADOS INSERIDOS NO INPUT
+    const cursoValue = curso.value;
+    const dataInicioCursoValue = dataInicioCurso.value;
+    const dataTerminoCursoValue = dataTerminoCurso.value;
+    
+    //VARIÁVEL INCIAL = DADOS RECEBIDOS PELO INPUT
+    const cursoE = {
+        curso: cursoValue,
+        dataInicioCurso: dataInicioCursoValue,
+        dataTerminoCurso: dataTerminoCursoValue,
+    };
+
+    cursoExtracurricular.push(cursoE);
+    //LIMPAR FORMULÁRIO
+    curso.value = "";
+    dataInicioCurso.value = "";
+    dataTerminoCurso.value = "";
+});
+
+
 //BOTÃO GERAR CURRICULO
 const geraCurriculoBtn = document.getElementById("salvar");
 geraCurriculoBtn.addEventListener("click", function(event) {
     event.preventDefault();
- 
+
 //INCLUSÃO DA FOTO
 const fotoInput = document.getElementById("foto");
 const fotoFile = fotoInput.files[0]
@@ -153,17 +176,33 @@ function gerarExperienciaProfissionalHTML() {
                       
         experienciaHTML += "<li>Cargo: " + cargo + "</li>";
         experienciaHTML += "<li>Empresa: " + empresa + "</li>";
-        experienciaHTML += "<li>Data de Início: " + dataInicio  + "</li>";
+        experienciaHTML += "<li>Data de início: " + dataInicio  + "</li>";
         if (dataTermino === "") {
-            experienciaHTML += "<li>Data de Término: É meu emprego atual</li>";
+            experienciaHTML += "<li>Data de término: É meu emprego atual</li>";
         } else {
-            experienciaHTML += "<li>Data de Término: " + dataTermino + "</li>";
+            experienciaHTML += "<li>Data de término: " + dataTermino + "</li>";
         }
         experienciaHTML += "<li>Descrição do Cargo: " + descricaoCargo + "</li>";
         experienciaHTML += "<br>";
     });
 
     return experienciaHTML;
+}
+
+//GERA O HTML DE CURSOS EXTRACURRICULARES
+function gerarCursoExtracurricularHTML() {
+    let cursoHTML = "";
+
+    cursoExtracurricular.forEach(function(cursoE) {
+        const { curso, dataInicioCurso, dataTerminoCurso} = cursoE;
+                      
+        cursoHTML += "<li>Curso: " + curso + "</li>";
+        cursoHTML += "<li>Data de início: " + dataInicioCurso + "</li>";
+        cursoHTML += "<li>Data de término: " + dataTerminoCurso  + "</li>";     
+        cursoHTML += "<br>";
+    });
+
+    return cursoHTML;
 }
 
 
@@ -207,7 +246,16 @@ var novaPagina =
 "</div>"+
 "<p>" + email.value + "</p>" + telefoneFormatado + "<p>"+
 "<p>" + localidade.value + "</p>" +
-"<p>" + website.value + "</p>";
+"<p>" + website.value + "</p>"+
+"<h2>Formação Acadêmica</h2>"+
+"<ul>"+
+"<li>" + instituicao.value + "</li>"+
+"<li>" + cursoFormacao.value + "</li>"+
+"<li>Data de início: " + dataInicioForm.value + "</li>"+
+"<li>Data de término: " + dataTerminoForm.value + "</li>";
+if(cursoExtracurricular.length >0){
+    novaPagina+= "<h2>Cursos Extracurriculares</h2>" + "<ul" + gerarCursoExtracurricularHTML() + "<ul>"
+}
 if (experienciaProfissional.length > 0){
   novaPagina += "<h2>Experiência Profissional</h2>" + "<ul>" + gerarExperienciaProfissionalHTML() + "</ul>"
 }
