@@ -1,0 +1,50 @@
+"<!DOCTYPE html>" +
+"<html lang='pt=br'>" +
+"<head>" +
+"<meta charset = 'UTF-8'>"+
+"<meta http-equiv='X-UA-Compatible' content= 'IE=edge'>"+
+"<meta name='viewport' content='width=device-width, initial-scale=1.0'>"+
+"<title>Meu Currículo</title>" +
+"<link rel='stylesheet' type='text/css' href='style2.css'>"+
+"<link rel='shortcut icon' href='imagens/favicon.ico' type='image/x-icon'>"+
+"</head>" +
+"<body>" +
+"<main>"+
+"<div class='total'>"+
+"<div class='conteudo'>" +
+"<img src='"+ fotoUrl +"' alt='Foto' class='foto-curriculo'>" +
+"<section class = dadosP>"+
+"<p class ='nome'>"+nome.value+"</p>" +
+"<p>" + email.value + "<p>" + 
+"<p>" + telefoneFormatado + "<p>"+
+"<p>" + idade.value +" anos"+ ", "+ estadoCivil.value +"</p>"+
+"<p>" + localidade.value + "</p>" +
+"<a href=' website.value+' target='_blank' class='externo'><p>" + website.value+ "</p></a>"+
+"</section>"+
+"</div>"+
+"<section class='sect-formacao'>"
+"<h1 class='formacao'>Formação Acadêmica</h1>"+
+"<ul>"+
+"<li>" + instituicao.value + "</li>"+
+"<li>" + cursoFormacao.value + "</li>"+
+"<li>Data de início: " + dataInicioForm.value + "</li>"+
+"<li>Data de término: " + dataTerminoForm.value + "</li>"+
+"</section>"+
+"<section class= 'sect-idioma'>";
+if(idiomas.length >0){
+    novaPagina+= "<h1 class='idioma'>Idioma</h1>" + "<ul>" + geraIdiomaHTML() + "<ul>"
+}
+"</section>"
+if(cursoExtracurricular.length >0){
+    novaPagina+= "<h1 class='curso-extra'>Cursos Extracurriculares</h1>" + "<ul>" + geraCursoExtracurricularHTML() + "<ul>"
+}
+if (experienciaProfissional.length > 0){
+  novaPagina += "<h1 class='experienciaP'>Experiência Profissional</h1>" + "<ul>" + geraExperienciaProfissionalHTML() + "</ul>"
+}
+novaPagina +=
+
+
+"</main>"+
+"</div>"+
+"</body>" +
+"</html>";

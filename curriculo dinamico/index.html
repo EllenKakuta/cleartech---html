@@ -7,6 +7,7 @@
     <title>Construtor de Currículo</title>
 	    <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
 		
 </head>
 <body>
@@ -14,16 +15,13 @@
     <h1>Construtor de Currículo</h1>
     </header>
 		<main>
-			<div class="output">
+			<div >
 				<h2>Informações Pessoais</h2>
 				<form id="info-pessoal">
-					
 					<!--<label for="nome">Nome:</label>-->
 					<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="inputs required"  oninput="nameValidate()">
 					<span class="span-required">Nome deve ter no mínimo 10 caracteres</span>
-					
-
-				
+													
 					<!--<label for="email">E-mail:</label>-->
 					<input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" class="inputs required" oninput="emailValidate()" >
 					<span class="span-required">Digite um e-mail válido</span>
@@ -40,12 +38,17 @@
 					<input type="url" id="website" name="website" placeholder="Informe seu linkedIn, caso possua.." class="inputs required" oninput="urlValidate()">
 					<span class="span-required">Digite uma URL válida</span>
 
+					<input type="text" id="estado-civil" name="estado-civil" placeholder="Solteiro(a)? Casado(a)? União estável?" class="inputs required" oninput="letraValidate()">
+					<span class="span-required">Informe seu estado civil, permitido somente o uso de letras</span>
+
+					<input type="text" id="idade" name="idade" placeholder="Informe sua idade" class="inputs required" oninput="numeroValidate()">
+					<span class="span-required">Informe uma idade válida</span>
+
                     <label for="foto"> Foto</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
-                    <img id= "photo-preview" src="#" alt="Preview da foto" style="display:none">
-					
+                    <img id= "photo-preview" src="#" alt="Preview da foto" style="display:none">					
 				</form>
-			</div class="output">
+			</div >
 
 			<div>
                 <h2>Formação Acadêmica</h2>
@@ -62,13 +65,42 @@
 						<label for="data-termino-formacao">Término:</label>
 						<input type="date" id="data-termino-formacao" name="data-termino-formacao" required>
 					</section>
-					<p>Obs: Caso formação esteja em andamento, informar data aproximada do término..</p>
-
-                 
+					<p>Obs: Caso formação esteja em andamento, informar data aproximada do término..</p>                
                 </form>
             </div>
+			<div>
+				<h2>Idiomas</h2>
+				<form id="idiomas">
+					<label for="idioma-nome">Idioma:</label>
+					<input type="text" id="idioma-nome" name="idioma-nome">
 
+					<label for="idioma-nivel">Nível:</label>
+					<select id="idioma-nivel" name="idioma-nivel" required>
+						<option value="">-- Selecione --</option>
+						<option value="Iniciante">Iniciante</option>
+						<option value="Intermediário">Intermediário</option>
+						<option value="Avançado">Avançado</option>
+					</select>
 
+					<button type="button" id="add-idioma" class="add-botao">Adicionar</button>
+                </form>
+            </div >
+
+			<div>
+				<h2>Cursos Extracurriculares</h2>
+				<form id="cursos">
+					<label for="curso-nome">Nome do Curso:</label>
+					<input type="text" id="curso-nome" name="curso-nome" required>
+
+					<label for="data-inicio-curso">Data de Início:</label>
+					<input type="date" id="data-inicio-curso" name="data-inicio-curso" required>
+
+					<label for="data-termino-curso">Data de Término:</label>
+					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
+                 				
+					<button type="button" id="add-curso-botao" class="add-botao">Adicionar</button>
+                </form>
+            </div>	
 
 			<div id="experiencia">
 				<h2>Experiência Profissional</h2>
@@ -94,56 +126,20 @@
 					<label for="descricao-cargo">Descrição do Cargo:</label>
 					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"></textarea>
 
-					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>
-				
+					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>		
 				</form>
-			</div class="output">
+			</div >           
 
-            
-
-			<div class="output">
-				<h2>Cursos Extracurriculares</h2>
-				<form id="cursos">
-					<label for="curso-nome">Nome do Curso:</label>
-					<input type="text" id="curso-nome" name="curso-nome" required>
-
-					<label for="data-inicio-curso">Data de Início:</label>
-					<input type="date" id="data-inicio-curso" name="data-inicio-curso" required>
-
-					<label for="data-termino-curso">Data de Término:</label>
-					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
-                 				
-					<button type="button" id="add-curso-botao" class="add-botao">Adicionar</button>
-                </form>
-            </div>
-
-			<div class="output">
-				<h2>Idiomas</h2>
-				<form id="idiomas">
-					<label for="idioma-nome">Idioma:</label>
-					<input type="text" id="idioma-nome" name="idioma-nome">
-
-					<label for="idioma-nivel">Nível:</label>
-					<select id="idioma-nivel" name="idioma-nivel" required>
-						<option value="">-- Selecione --</option>
-						<option value="Iniciante">Iniciante</option>
-						<option value="Intermediário">Intermediário</option>
-						<option value="Avançado">Avançado</option>
-					</select>
-
-					<button type="button" id="add-idioma" class="add-botao">Adicionar</button>
-                </form>
-            </div class="output">
 			<form action="">
 				<section class="botao">
 					<button id="salvar" type="submit">Gerar Currículo</button>
 				</section>
 			</form>
-			
-			
+						
             <footer>
                 <p>&#169;Copyright EKD 2023</p>
             </footer>
+
         </main>
 	<script src="script.js"></script>          
                
