@@ -19,23 +19,18 @@ body{
     background-image: url('imagens/img01.webp');
     background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
-  
+    height: 100vh; 
 }
 
 /* Estilo para o cabeçalho */
-header{
-  
+header{  
     border-radius: 8px;
     background-color:#1F0905;
-    box-shadow: 1px 1px 9px #463b32;
+    box-shadow: 1px 1px 9px #070f53;
     margin-left: 250px;
     margin-right: 250px;
     margin-bottom: 50px;
-    
 }
-
-
 
 /* Estilo para texto do cabeçalho */
 header >h1{
@@ -59,7 +54,7 @@ div {
     max-width: 800px;
   	background-color: #C6CEEE;
 	border-radius: 5px;
-    box-shadow: 1px 1px 19px black;
+    box-shadow: 1px 1px 19px #070f53;
 }
 
 .span-required{
@@ -67,12 +62,14 @@ div {
     margin: 1px 0 0 0px;
     display: none;
     color: red;
+    font-family: var(--fonte004);
+    font-size: 0.8em;
 }
 
 
 div section {
     display:flex;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     gap: 2rem;     
 }
 
@@ -86,21 +83,23 @@ div > h2{ /*cabeçalho da div*/
 .inputs{
     padding: 7px 4px;
     outline: none;
-    background-color:  #dee3ec91;
-    border: 2px solid 595D6B;
-    color: white;
+    background-color:  white;
+    border: 2px solid #a3c3ffd5;
+    box-shadow: 1px 1px 9px #95b4ece8;
+    color: rgb(36, 21, 1);
     width: 100%;
     box-sizing: border-box;
-    transition: .4s;
+    transition: 1s;
 }
 
 
 .inputs:focus{
-    border-color: rgb(228, 215, 32);
+    border-color: #383b47;
     border-width: 2.5px;
+    transition: 0.9s;
 }
 
-/* Estilo para nome dos campos -  */
+/* /Títulos dos inputs */
 label {
     font-family: var(--fonte004);
     font-size: 1em;
@@ -109,45 +108,36 @@ label {
 	font-weight: bold;
 }
 
-.check{
+.check{ /*checkbox*/
     display: flex;
     margin-left: 150px;
     
 }
 
-/* Estilo para os campos de entrada */
-input, textarea {
+/* borda os inputs */
+input, textarea  {
 	display: block;
 	margin-bottom: 10px;
 	padding: 5px;
-	border: 1px solid #ccc;
+
 	border-radius: 3px;
 	width: 100%;
 	box-sizing: border-box;
+    
 }
 
+*::placeholder {
+    font-family: var(--fonte004), sans-serif;
+  }
 
 
-
-.observacao{
+.observacao{ /*texto informativo curso extra e form academica*/
     font-family: var(--fonte004);
     font-size: 0.9em;
 }
 
 
-
-/* Estilo para as mensagens de erro
-input:invalid, textarea:invalid {
-	border-color: #af0707da;
-    box-shadow: 1px 1px 10px #636873;
-}
-
-input:valid, textarea:valid {
-	border-color: #03634be0;
-    box-shadow: 1px 1px 50px #b8bbc0a2;
-} */
-
-button[type="submit"]{
+button[type="submit"]{ /*botao gerar curriculo*/
     padding: 1.2em;
     font-size: 0.8em;
     outline:none;
@@ -158,7 +148,7 @@ button[type="submit"]{
     box-shadow: 0px 0px 19px black;
 }
 
-button[type="submit"]:hover{
+button[type="submit"]:hover{ /*efeito do botao gerar curriculo*/
     background-color: #A3C3FF;
     font-weight: bolder;
     font-size: 1em;
@@ -170,15 +160,15 @@ button[type="submit"]:hover{
     text-align: right;
 }
 
-button:hover{
-    transition: .5s;
+button:hover{ /*efeito demais botões*/
+    transition: 0.5s;
     border-color: #4b85f0;
     cursor: pointer;
     font-size: 1em;
     font-family: var(--fonte003);
 }
 
-footer{
+footer{ /*rodapé*/
     border-radius: 5px;
     background-color: #595D6B;
     box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);

@@ -53,17 +53,17 @@
 			<div>
                 <h2>Formação Acadêmica</h2>
                 <form id="formacao">
-                    <label for="instituicao">Instituição de Ensino</label>
-                    <input type="text" name="instituicao" id="instituicao" required>
+                    <!-- <label for="instituicao">Instituição de Ensino</label> -->
+                    <input type="text" name="instituicao" id="instituicao" placeholder="Nome da escola ou faculdade" class="inputs"  required>
 
 					<label for="nome-curso">Curso</label>
-                    <input type="text" name="nome-curso" id="nome-curso" required>
+                    <input type="text" name="nome-curso" id="nome-curso" required placeholder="Ensino fundamental, ensino médio, curso de graduação ou pós graduação" class="inputs" required>
 
                     <section>
 						<label for="data-inicio-formacao">Início:</label>
-						<input type="date" id="data-inicio-formacao" name="data-inicio-formacao" required>
+						<input type="date" id="data-inicio-formacao" name="data-inicio-formacao"class="inputs" required>
 						<label for="data-termino-formacao">Término:</label>
-						<input type="date" id="data-termino-formacao" name="data-termino-formacao" required>
+						<input type="date" id="data-termino-formacao" name="data-termino-formacao"class="inputs" required>
 					</section>
 					<p class="observacao">** Se sua formação estiver em andamento, informe a data aproximada do término..</p>                
                 </form>
@@ -72,7 +72,7 @@
 				<h2>Idiomas</h2>
 				<form id="idiomas">
 					<label for="idioma-nome">Idioma:</label>
-					<input type="text" id="idioma-nome" name="idioma-nome">
+					<input type="text" id="idioma-nome" name="idioma-nome" class="inputs">
 
 					<label for="idioma-nivel">Nível:</label>
 					<select id="idioma-nivel" name="idioma-nivel" required>
@@ -90,12 +90,12 @@
 				<h2>Cursos Extracurriculares</h2>
 				<form id="cursos">
 					<label for="curso-nome">Nome do Curso:</label>
-					<input type="text" id="curso-nome" name="curso-nome" required>
+					<input type="text" id="curso-nome" name="curso-nome" class="inputs" required>
 					<section>
 					<label for="data-inicio-curso">Início:</label>
-					<input type="date" id="data-inicio-curso" name="data-inicio-curso" required>
+					<input type="date" id="data-inicio-curso" name="data-inicio-curso" class="inputs" required>
 					<label for="data-termino-curso">Término:</label>
-					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
+					<input type="date" id="data-termino-curso" name="data-termino-curso"  class="inputs" required>
 				</section>
 				<p class= "observacao">** Se estiver com o curso em andamento, informe a data aproximada do término..</p>
 					<button type="button" id="add-curso-botao" class="add-botao">Adicionar</button>
@@ -106,25 +106,25 @@
 				<h2>Experiência Profissional</h2>
 				<form id="exp-profissional">
 					<label for="cargo">Cargo:</label>
-					<input type="text" id="cargo" name="cargo" >
+					<input type="text" id="cargo" name="cargo" class="inputs" >
 
 					<label for="empresa">Empresa:</label>
-					<input type="text" id="empresa" name="empresa" >
+					<input type="text" id="empresa" name="empresa" class="inputs" >
 
 					<section>
 						<label for="data-inicio">Início:</label>
-						<input type="date" id="data-inicio" name="data-inicio">
+						<input type="date" id="data-inicio" name="data-inicio" class="inputs">
 						<label for="data-termino">Término:</label>
-						<input type="date" id="data-termino" name="data-termino" >
+						<input type="date" id="data-termino" name="data-termino" class="inputs">
 					</section>
 					
 					<section>
 						<label class="check" for="emprego-atual">Emprego atual
-						<input type="checkbox" id="emprego-atual" name="emprego-atual"></label>
+						<input type="checkbox" id="emprego-atual" name="emprego-atual" class="inputs"></label>
 					</section>	
 
 					<label for="descricao-cargo">Descrição do Cargo:</label>
-					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"></textarea>
+					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"class="inputs"></textarea>
 
 					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>		
 				</form>
