@@ -27,9 +27,7 @@ header{
     border-radius: 8px;
     background-color:#1F0905;
     box-shadow: 1px 1px 9px #070f53;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-bottom: 50px;
+   margin:auto;
 }
 
 /* Estilo para texto do cabeçalho */

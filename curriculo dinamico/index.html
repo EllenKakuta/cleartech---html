@@ -19,23 +19,23 @@
 				<h2>Informações Pessoais</h2>
 				<form id="info-pessoal">
 					<!--<label for="nome">Nome:</label>-->
-					<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="inputs required"  oninput="nameValidate()">
+					<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="inputs required"  oninput="nameValidate()" onkeyup="capitalizeFirstLetter(this)">
 					<span class="span-required">Nome deve ter no mínimo 10 caracteres</span>
 													
 					<!--<label for="email">E-mail:</label>-->
-					<input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" class="inputs required" oninput="emailValidate()" >
+					<input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" class="inputs required" oninput="emailValidate()"  >
 					<span class="span-required">Digite um e-mail válido</span>
 								
 					<!--<label for="fone">Telefone:</label>-->
-					<input type="tel" id="fone" name="fone" placeholder="Informe seu melhor número para contato" class="inputs required" oninput="telValidate()">
+					<input type="tel" id="fone" name="fone" placeholder="Informe seu melhor número para contato" class="inputs required" oninput="telValidate()" >
 					<span class="span-required">Digite um telefone válido</span>
 					
 					<!-- <label for="endereco">Localidade:</label> -->
-					<input type="text" id="localidade" name="localidade" placeholder="Informe sua localidade (Cidade e Estado)" class="inputs required">
+					<input type="text" id="localidade" name="localidade" placeholder="Informe sua localidade (Cidade e Estado)" class="inputs required" onkeyup="capitalizeFirstLetter(this)">
 					<span class="span-required">Informe sua localidade (Cidade e Estado)</span>
 
 					<!-- <label for="website">Website:</label> -->
-					<input type="url" id="website" name="website" placeholder="Informe seu linkedIn, caso possua.." class="inputs required" oninput="urlValidate()">
+					<input type="url" id="website" name="website" placeholder="Informe seu linkedIn, caso possua.." class="inputs required" oninput="urlValidate()" >
 					<span class="span-required">Digite uma URL válida</span>
 
 					<input type="text" id="estado-civil" name="estado-civil" placeholder="Solteiro(a)? Casado(a)? União estável?" class="inputs required" oninput="letraValidate()">
@@ -54,16 +54,16 @@
                 <h2>Formação Acadêmica</h2>
                 <form id="formacao">
                     <!-- <label for="instituicao">Instituição de Ensino</label> -->
-                    <input type="text" name="instituicao" id="instituicao" placeholder="Nome da escola ou faculdade" class="inputs"  required>
+                    <input type="text" name="instituicao" id="instituicao" placeholder="Nome da escola ou faculdade" class="inputs"  onkeyup="capitalizeFirstLetter(this)"required>
 
 					<label for="nome-curso">Curso</label>
-                    <input type="text" name="nome-curso" id="nome-curso" required placeholder="Ensino fundamental, ensino médio, curso de graduação ou pós graduação" class="inputs" required>
+                    <input type="text" name="nome-curso" id="nome-curso" required placeholder="Ensino fundamental, ensino médio, curso de graduação ou pós graduação" class="inputs" onkeyup="capitalizeFirstLetter(this)" required>
 
                     <section>
 						<label for="data-inicio-formacao">Início:</label>
-						<input type="date" id="data-inicio-formacao" name="data-inicio-formacao"class="inputs" required>
+						<input type="date" id="data-inicio-formacao" name="data-inicio-formacao"class="inputs"onkeyup="capitalizeFirstLetter(this)" required>
 						<label for="data-termino-formacao">Término:</label>
-						<input type="date" id="data-termino-formacao" name="data-termino-formacao"class="inputs" required>
+						<input type="date" id="data-termino-formacao" name="data-termino-formacao"class="inputs" onkeyup="capitalizeFirstLetter(this)" required>
 					</section>
 					<p class="observacao">** Se sua formação estiver em andamento, informe a data aproximada do término..</p>                
                 </form>
@@ -72,7 +72,7 @@
 				<h2>Idiomas</h2>
 				<form id="idiomas">
 					<label for="idioma-nome">Idioma:</label>
-					<input type="text" id="idioma-nome" name="idioma-nome" class="inputs">
+					<input type="text" id="idioma-nome" name="idioma-nome" class="inputs" onkeyup="capitalizeFirstLetter(this)">
 
 					<label for="idioma-nivel">Nível:</label>
 					<select id="idioma-nivel" name="idioma-nivel" required>
@@ -90,7 +90,7 @@
 				<h2>Cursos Extracurriculares</h2>
 				<form id="cursos">
 					<label for="curso-nome">Nome do Curso:</label>
-					<input type="text" id="curso-nome" name="curso-nome" class="inputs" required>
+					<input type="text" id="curso-nome" name="curso-nome" class="inputs" onkeyup="capitalizeFirstLetter(this)"required>
 					<section>
 					<label for="data-inicio-curso">Início:</label>
 					<input type="date" id="data-inicio-curso" name="data-inicio-curso" class="inputs" required>
@@ -106,10 +106,10 @@
 				<h2>Experiência Profissional</h2>
 				<form id="exp-profissional">
 					<label for="cargo">Cargo:</label>
-					<input type="text" id="cargo" name="cargo" class="inputs" >
+					<input type="text" id="cargo" name="cargo" class="inputs" onkeyup="capitalizeFirstLetter(this)" >
 
 					<label for="empresa">Empresa:</label>
-					<input type="text" id="empresa" name="empresa" class="inputs" >
+					<input type="text" id="empresa" name="empresa" class="inputs" onkeyup="capitalizeFirstLetter(this)">
 
 					<section>
 						<label for="data-inicio">Início:</label>
@@ -124,7 +124,7 @@
 					</section>	
 
 					<label for="descricao-cargo">Descrição do Cargo:</label>
-					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"class="inputs"></textarea>
+					<textarea id="descricao-cargo" name="descricao-cargo" rows="5" placeholder="Descreva as atividades desempenhadas"class="inputs" onkeyup="capitalizeFirstLetter(this)"></textarea>
 
 					<button type="button" id="add-experiencia-botao" class="add-botao">Adicionar</button>		
 				</form>

@@ -30,8 +30,11 @@ const dataTerminoCurso = document.getElementById("data-termino-curso");
 const idioma = document.getElementById("idioma-nome")
 const idiomaNivel = document.getElementById("idioma-nivel");
 
-
-
+//FUNÇÃO PARA QUE A PRIMEIRA LETRA DIGITADA DENTRO DO INPUT SEJA SEMPRE MAIÚSCULA
+function capitalizeFirstLetter(input) {
+    var valor = input.value;
+    input.value = valor.charAt(0).toUpperCase() + valor.slice(1);
+  }
 
 //VALIDAÇÃO DE DADOS
 const form = document.getElementById('info-pessoal');
@@ -42,13 +45,6 @@ const telRegex = /^(?:(?:\+|00)?(55)\s?)?(?:(?:\(?[1-9][0-9]\)?)?\s?)?(?:((?:9\d
 const urlRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i;
 const letraRegex = /^[A-Za-z]+$/;
 const numeroRegex = /^[0-9]{1,3}$/;
-
-// form.addEventListener('buttom', (event)=>{
-//     event.preventDefault();
-//     nameValidate();
-//     emailValidate();
-//     telValidate();
-// });
 
 
 function setError(index){
@@ -189,26 +185,6 @@ addIdiomaBotao.addEventListener("click", function(event) {
     idiomaNivel.value= "";
 });
 
-// //ARRAY DE ARMAZENAMENTO DE OBJETIVO
-// let objt = [];
-// const addObjetivoBotao = document.getElementById("add-objetivo");
-// addObjetivoBotao.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     //DADOS INSERIDOS NO INPUT
-//     const objetivoValue = objetivo.value;
-//    //VARIÁVEL INICIAL = DADOS RECEBIDOS PELO INPUT
-//     const objetV = {
-//         objetivo: objetivoValue,
-      
-       
-//     };
-//     idiomas.push(objetV);
-//     //LIMPAR FORMULÁRIO
-//     objetivo.value = "";
-   
-// });
-
-
 
 //BOTÃO GERAR CURRICULO
 const geraCurriculoBtn = document.getElementById("salvar");
@@ -275,79 +251,69 @@ function geraIdiomaHTML() {
     return idiomaHTML;
 }
 
-// //GERA O HTML DE IDIOMA
-// function geraObjetivoHTML() {
-//     let objetivoHTML = "";
-//     objt.forEach(function(objetV) {
-//         const { objetivo} = objetV;
-//         objetivoHTML += "<p>" + idioma + "</p>";
-       
-//     });
-//     return objetivoHTML;
-// }
 
-//ALERTAS
-//->Informações pessoais
-// if(nome.value.trim()===""){
-//     alert("Por favor insira seu nome competo");
-//     return;
-// }
-// if(email.value.trim()===""){
-//     alert("Por favor insira seu melhor e-mail para contato");
-//     return;
-// }
-// if(telefone.value.trim()===""){
-//     alert("Por favor insira seu melhor telefone para contato");
-//     return;
-// }
-// if (localidade.value.trim() === "") {
-//     alert("Por favor, informe sua localidade (Cidade e Estado).");
-//     return;
-// }
-// if(estadoCivil.value.trim()===""){
-//     alert ("Informe seu estado civil")
-//     return;
-// }
-// if(idade.value.trim()===""){
-//     alert ("Informe sua idade")
-// }
+// ALERTAS
+// ->Informações pessoais
+if(nome.value.trim()===""){
+    alert("Por favor insira seu nome competo");
+    return;
+}
+if(email.value.trim()===""){
+    alert("Por favor insira seu melhor e-mail para contato");
+    return;
+}
+if(telefone.value.trim()===""){
+    alert("Por favor insira seu melhor telefone para contato");
+    return;
+}
+if (localidade.value.trim() === "") {
+    alert("Por favor, informe sua localidade (Cidade e Estado).");
+    return;
+}
+if(estadoCivil.value.trim()===""){
+    alert ("Informe seu estado civil")
+    return;
+}
+if(idade.value.trim()===""){
+    alert ("Informe sua idade")
+}
 
-// //->Formaçao acadêmica
-// if(instituicao.value.trim()===""){
-//     alert ("Informe o nome da Instituição de Ensino");
-//     return;
-// }
-// if(cursoFormacao.value.trim()===""){
-//     alert ("Informe o curso de sua Formação Acadêmica");
-//     return;
-// }
-// if(instituicao.value.trim()!=="" && dataInicioForm.value.trim()==="" && dataTerminoForm.value.trim()===""){
-//     alert ("Informe data de inínio e data de término da Formação Acadêmica")
-//     return;
-// }
-// //->Idioma
-// if(idioma.value.trim()!=="" && idiomaNivel.value.trim()===""){
-//     alert ("Insira o nível de conhecimento do idioma informado");
-//     return;
-// }
-// //->Curso extracurricula
-// if(cursoExtra.value.trim()!=="" && dataInicioForm.value.trim()===""||dataTerminoForm.value.trim()===""){
-//     alert ("Informe data de inínio e data de término do curso informado")
-//     return;
-// }
-// //->Experiência profissional
-// if(cargo.value.trim()!=="" && empresa.value.trim()===""){
-//     alert ("Insira o nome da empresa que exerceu o cargo informado");
-//     return;
-// }
-// if(cargo.value.trim()!=="" && dataInicioExp.value.trim()===""){
-//     alert ("Informe data de inínio e data de término no cargo informado");
-//     return;
-// }
-// if(cargo.value.trim()!=="" && descricaoCargo.value.trim()===""){
-//     alert ("Descreva as atividades desempenhadas na empresa informada");
-//     return;
-// }
+//->Formaçao acadêmica
+if(instituicao.value.trim()===""){
+    alert ("Informe o nome da Instituição de Ensino");
+    return;
+}
+if(cursoFormacao.value.trim()===""){
+    alert ("Informe o curso de sua Formação Acadêmica");
+    return;
+}
+if(instituicao.value.trim()!=="" && dataInicioForm.value.trim()==="" && dataTerminoForm.value.trim()===""){
+    alert ("Informe data de inínio e data de término da Formação Acadêmica")
+    return;
+}
+//->Idioma
+if(idioma.value.trim()!=="" && idiomaNivel.value.trim()===""){
+    alert ("Insira o nível de conhecimento do idioma informado");
+    return;
+}
+//->Curso extracurricular
+if(cursoExtra.value.trim()!=="" && dataInicioForm.value.trim()===""||dataTerminoForm.value.trim()===""){
+    alert ("Informe data de inínio e data de término do curso informado")
+    return;
+}
+//->Experiência profissional
+if(cargo.value.trim()!=="" && empresa.value.trim()===""){
+    alert ("Insira o nome da empresa que exerceu o cargo informado");
+    return;
+}
+if(cargo.value.trim()!=="" && dataInicioExp.value.trim()===""){
+    alert ("Informe data de inínio e data de término no cargo informado");
+    return;
+}
+if(cargo.value.trim()!=="" && descricaoCargo.value.trim()===""){
+    alert ("Descreva as atividades desempenhadas na empresa informada");
+    return;
+}
 if(estadoCivil.value.trim()===""){
     alert ("Informe seu estado civil");
     return;
@@ -369,21 +335,6 @@ var novaPagina =
 "<title>Meu Currículo</title>" +
 "<link rel='stylesheet' type='text/css' href='style2.css'>"+
 "<link rel='shortcut icon' href='imagens/favicon.ico' type='image/x-icon'>"+
-"<style>" +
-"@media print {" +
-"  body {" +
-"    background-color: black;" +
-"  }" +
-"  .total {" +
-"    background-color: white;" +
-"    box-shadow: none;" +
-"    border-radius: 0;" +
-"    margin: 0;" +
-"    padding: 20px;" +
-"    page-break-inside: avoid;" +
-"  }" +
-"}" +
-"</style>" +
 "</head>" +
 "<body>" +
 "<main>"+
@@ -435,23 +386,7 @@ const novaJanela = window.open("", "_blank");
   novaJanela.document.open();
   novaJanela.document.write(novaPagina);
   novaJanela.document.close();
-  // Função para gerar o PDF
-function gerarPDF() {
-    // Criação de um novo objeto jsPDF
-    var doc = new jsPDF();
-  
-    // Configurações do documento PDF
-    var pdfOptions = {
-      format: 'a4',
-      orientation: 'portrait',
-    };
-  
-    // Gera o PDF a partir do conteúdo da nova página
-    doc.html(novaPagina, pdfOptions);
-  
-    // Salva o arquivo PDF
-    doc.save('curriculo.pdf');
-  }
+ 
 });
 
 reader.readAsDataURL(fotoFile);
