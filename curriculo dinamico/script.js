@@ -268,7 +268,7 @@ function geraIdiomaHTML() {
     let idiomaHTML = "";
     idiomas.forEach(function(idiomaN) {
         const { idioma, idiomaNivel} = idiomaN;
-        idiomaHTML += "<li>Idioma: " + idioma + "</li>";
+        idiomaHTML += "<li>"+ idioma + "</li>";
         idiomaHTML += "<li>Nível: " + idiomaNivel + "</li>"  
         idiomaHTML += "<br>";
     });
@@ -399,6 +399,7 @@ var novaPagina =
 "<a href=' website.value+' target='_blank' class='externo'><p>" + website.value+ "</p></a>"+
 "</section>"+
 "</div>"+
+
 "<section class='sect-formacao'>"+
 "<h1 class='formacao'>Formação Acadêmica</h1>"+
 "<ul>"+
@@ -411,14 +412,16 @@ var novaPagina =
 if(idiomas.length >0){
     novaPagina+= "<h1 class='idioma'>Idioma</h1>" + "<ul>" + geraIdiomaHTML() + "<ul>"
 }
-"</section>"
+"</section>"+
+"<section = 'sect-cursoE'>";
 if(cursoExtracurricular.length >0){
     novaPagina+= "<h1 class='curso-extra'>Cursos Extracurriculares</h1>" + "<ul>" + geraCursoExtracurricularHTML() + "<ul>"
 }
+"<section = 'sect-exp'>";
 if (experienciaProfissional.length > 0){
   novaPagina += "<h1 class='experienciaP'>Experiência Profissional</h1>" + "<ul>" + geraExperienciaProfissionalHTML() + "</ul>"
 }
-
+"</section>"
 novaPagina +="<button onclick='gerarPDF()' id= 'pdf-botao'>Download/Impressão em PDF</button>";
 
 
