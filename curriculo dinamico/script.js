@@ -348,8 +348,14 @@ function geraIdiomaHTML() {
 //     alert ("Descreva as atividades desempenhadas na empresa informada");
 //     return;
 // }
-
-
+if(estadoCivil.value.trim()===""){
+    alert ("Informe seu estado civil");
+    return;
+}
+if(idade.value.trim()===""){
+    alert("Informe sua idade");
+    return;
+}
 
 
 //IMPRESSÃO EM NOVA PÁGINA HTML

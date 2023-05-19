@@ -65,7 +65,7 @@
 						<label for="data-termino-formacao">Término:</label>
 						<input type="date" id="data-termino-formacao" name="data-termino-formacao" required>
 					</section>
-					<p>Obs: Caso formação esteja em andamento, informar data aproximada do término..</p>                
+					<p class="observacao">** Se sua formação estiver em andamento, informe a data aproximada do término..</p>                
                 </form>
             </div>
 			<div>
@@ -91,13 +91,13 @@
 				<form id="cursos">
 					<label for="curso-nome">Nome do Curso:</label>
 					<input type="text" id="curso-nome" name="curso-nome" required>
-
-					<label for="data-inicio-curso">Data de Início:</label>
+					<section>
+					<label for="data-inicio-curso">Início:</label>
 					<input type="date" id="data-inicio-curso" name="data-inicio-curso" required>
-
-					<label for="data-termino-curso">Data de Término:</label>
+					<label for="data-termino-curso">Término:</label>
 					<input type="date" id="data-termino-curso" name="data-termino-curso" required>
-                 				
+				</section>
+				<p class= "observacao">** Se estiver com o curso em andamento, informe a data aproximada do término..</p>
 					<button type="button" id="add-curso-botao" class="add-botao">Adicionar</button>
                 </form>
             </div>	
@@ -119,8 +119,8 @@
 					</section>
 					
 					<section>
-						<label for="emprego-atual">Emprego atual</label>
-						<input type="checkbox" id="emprego-atual" name="emprego-atual">
+						<label class="check" for="emprego-atual">Emprego atual
+						<input type="checkbox" id="emprego-atual" name="emprego-atual"></label>
 					</section>	
 
 					<label for="descricao-cargo">Descrição do Cargo:</label>
@@ -137,7 +137,7 @@
 			</form>
 						
             <footer>
-                <p>&#169;Copyright EKD 2023</p>
+                <p>&#169;Copyright - EKD 2023 <a href="https://www.linkedin.com/in/ellenkakutadias/" target="_blank" > <img class="linkedin" src="imagens/145807.png" alt=""></a> <a href="https://www.instagram.com/ellen.sem.h/" target="_blank" ><img class= "instagram"src="imagens/instagram001.webp" alt="" ></a> <a href="https://api.whatsapp.com/send?phone=5511953638630" target="_blank"><img class="whatsapp" src="imagens/4494494.png" alt=""></a></p>
             </footer>
 
         </main>

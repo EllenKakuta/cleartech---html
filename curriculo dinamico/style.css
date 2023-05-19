@@ -4,15 +4,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,700&display=swap');
+
 :root{
     --fonte001: Arial, Helvetica, sans-serif;
     --fonte002: 'Bruno Ace SC', cursive;
     --fonte003:'Dosis', sans-serif;
+    --fonte004:'Raleway', sans-serif;
 }
 
 body{
     background-color: black;
-    background-image: url('imagens/imagem001.jpg');
+    background-image: url('imagens/img01.webp');
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
@@ -23,29 +27,36 @@ body{
 header{
   
     border-radius: 8px;
-    background-color:#595D6B;
-    box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
+    background-color:#1F0905;
+    box-shadow: 1px 1px 9px #463b32;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 50px;
     
 }
+
+
 
 /* Estilo para texto do cabeçalho */
 header >h1{
     font-family: var(--fonte002);
     font-size: 2.5em;
-    text-shadow: 1px 1px 5px #A3C3FF; 	
+    text-shadow: 1px 1px 5px #D8F495; 	
 	color: #fff;
 	padding: 40px;
 	text-align: center;  
+    padding: 20px;
+    margin-right:10px;
 }
 
 /* Estilo para as divs */
 div {
 	margin-left: auto;
-    margin-right: 100px;
+    margin-right: 70px;
     margin-bottom: 20px;
 	padding: 10px;
     min-width: 300px;
-    max-width: 1000px;
+    max-width: 800px;
   	background-color: #C6CEEE;
 	border-radius: 5px;
     box-shadow: 1px 1px 19px black;
@@ -91,11 +102,17 @@ div > h2{ /*cabeçalho da div*/
 
 /* Estilo para nome dos campos -  */
 label {
-    font-family: var(--fonte003);
+    font-family: var(--fonte004);
     font-size: 1em;
 	display: block;
   	margin-bottom: 5px;
 	font-weight: bold;
+}
+
+.check{
+    display: flex;
+    margin-left: 150px;
+    
 }
 
 /* Estilo para os campos de entrada */
@@ -107,6 +124,14 @@ input, textarea {
 	border-radius: 3px;
 	width: 100%;
 	box-sizing: border-box;
+}
+
+
+
+
+.observacao{
+    font-family: var(--fonte004);
+    font-size: 0.9em;
 }
 
 
@@ -123,10 +148,10 @@ input:valid, textarea:valid {
 } */
 
 button[type="submit"]{
-    padding: 1em;
-    font-size: 1em;
-    outline: none;
-    border: none;
+    padding: 1.2em;
+    font-size: 0.8em;
+    outline:none;
+    border:none;
     border-radius: 6px;
     cursor: pointer;
     transition: .5s;
@@ -134,9 +159,10 @@ button[type="submit"]{
 }
 
 button[type="submit"]:hover{
-    background-color: #055713;
+    background-color: #A3C3FF;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-family: var(--fonte003);
     
 }
 
@@ -145,9 +171,11 @@ button[type="submit"]:hover{
 }
 
 button:hover{
-    transition: .9s;
-    border-color: yellow;
+    transition: .5s;
+    border-color: #4b85f0;
     cursor: pointer;
+    font-size: 1em;
+    font-family: var(--fonte003);
 }
 
 footer{
@@ -161,6 +189,18 @@ footer p{
     color: #A3C3FF;
     text-align: right;
     font-family: var(--fonte002);
-    margin-right: 3%;
-   
+    margin-right: 3%;  
+}
+
+.linkedin{
+    max-width: 20px;
+}
+
+.instagram {
+    max-width: 20px;
+  
+} 
+
+.whatsapp{
+    max-width: 20px;
 }
