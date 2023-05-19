@@ -36,7 +36,7 @@ header{
 header >h1{
     font-family: var(--fonte002);
     font-size: 2.5em;
-    text-shadow: 1px 1px 5px #D8F495; 	
+    text-shadow: 1px 1px 15px #A3C3FF; 	
 	color: #fff;
 	padding: 40px;
 	text-align: center;  
@@ -75,7 +75,7 @@ div section {
 div > h2{ /*cabeçalho da div*/
     font-family: var(--fonte002);
     font-size: 1.5em;
-    color:#39446B;
+    color:#262e4d;
 }
 
 
@@ -138,6 +138,8 @@ input, textarea  {
 
 button[type="submit"]{ /*botao gerar curriculo*/
     padding: 1.2em;
+    margin-bottom: 15px;
+    margin-right: 45px;
     font-size: 0.8em;
     outline:none;
     border:none;
@@ -169,7 +171,7 @@ button:hover{ /*efeito demais botões*/
 
 footer{ /*rodapé*/
     border-radius: 5px;
-    background-color: #595D6B;
+    background-color: #1F0905;
     box-shadow: 1px 1px 15px rgba(16, 16, 36, 0.582);
     padding: 2px;
 }

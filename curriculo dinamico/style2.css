@@ -4,7 +4,7 @@
 
 :root{
   --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-  --fonte-destaque:'Raleway', sans-serif;
+  --fonte001:'Raleway', sans-serif;
 }
 
 @media print{
@@ -25,54 +25,42 @@
 
 
 body{
-  background-color: rgba(88, 76, 76, 0.699);
+  background-image: url('imagens/business.jpg!w700wp');
+  background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
 }
 
-
-
-
 .total{
-
   background-color: white;
   min-width: 300px;
   max-width: 800px;
-  margin: auto;
+  margin: 25%;
   text-align: justify;
   padding: 50px;
   box-shadow: 0px 0px 20px rgb(29, 28, 28);
   border-radius: 5px;
+  font-family: var(--fonte001);
 }
 
-.sect-formacao{
-  margin-right: 10%;
+ul {
+  padding-left: 25px;
+  list-style-type: '\2714\00a0';
+  
 }
-
-.sect-idioma{
-  margin-right: 10%;
-}
-
-.sect-cursoE{
-  margin-right: 7%;
-}
-
-.sect-exp {
-  margin-left: 75%;
-}
-
 
 .conteudo{  
  
 	padding: 10px;
   min-width: 300px;
   max-width: 1000px;
-  background-color: #c6ceeeaf;
+  background-color: white;
 	border-radius: 5px;
-  box-shadow: 1px 1px 19px black;
+  box-shadow: 1px 1px 7px rgb(131, 127, 127);
   display: flex;
   align-items: center;
   margin-top: 50px;
-  font-family: var(--fonte-destaque);
+  
 }
 
   .dadosP{ /* Section onde estão os dados pessoais*/
@@ -100,16 +88,4 @@ body{
   .externo >p{ /*link para o linkedin*/
     text-align: center;
     margin: 2.8px;
-  }
-
-  .sect-formacao{
-    background-color: white;
-    margin-left: 60px;
-    font-family: var(--fonte-destaque);
-  }
-
-  .sect-idioma{
-    background-color: white;
-    margin-left: 60px;
-    font-family: var(--fonte-destaque);
   }

@@ -236,15 +236,15 @@ function geraExperienciaProfissionalHTML() {
     let experienciaHTML = "";
     experienciaProfissional.forEach(function(experiencia) {
         const { cargo, empresa, dataInicioExp, dataTerminoExp, descricaoCargo,empregoAtual } = experiencia;                  
-        experienciaHTML += "<li>Cargo: " + cargo + "</li>";
-        experienciaHTML += "<li>Empresa: " + empresa + "</li>";
-        experienciaHTML += "<li>Data de início: " + dataInicioExp  + "</li>";
+        experienciaHTML += "<li><strong>Cargo:</strong> " + cargo + "</li>";
+        experienciaHTML += "<li><strong>Empresa:</strong> " + empresa + "</li>";
+        experienciaHTML += "<li><strong>Data de início</strong>: " + dataInicioExp  + "</li>";
         if (dataTerminoExp === "") {
-            experienciaHTML += "<li>Data de término: É meu emprego atual</li>";
+            experienciaHTML += "<li><strong>Data de término:</strong> É meu emprego atual</li>";
         } else {
-            experienciaHTML += "<li>Data de término: " + dataTerminoExp + "</li>";
+            experienciaHTML += "<li><strong>Data de término</strong>: " + dataTerminoExp + "</li>";
         }
-        experienciaHTML += "<li>Descrição do Cargo: " + descricaoCargo + "</li>";
+        experienciaHTML += "<li><strong>Descrição do Cargo:</strong> " + descricaoCargo + "</li>";
         experienciaHTML += "<br>";
     });
     return experienciaHTML;
@@ -255,9 +255,9 @@ function geraCursoExtracurricularHTML() {
     let cursoHTML = "";
     cursoExtracurricular.forEach(function(cursoE) {
         const { cursoExtra, dataInicioCurso, dataTerminoCurso} = cursoE;
-        cursoHTML += "<li>Curso: " + cursoExtra + "</li>";
-        cursoHTML += "<li>Data de início: " + dataInicioCurso + "</li>";
-        cursoHTML += "<li>Data de término: " + dataTerminoCurso  + "</li>";     
+        cursoHTML += "<li><strong>Curso:</strong> " + cursoExtra + "</li>";
+        cursoHTML += "<li><strong>Data de início:</strong> " + dataInicioCurso + "</li>";
+        cursoHTML += "<li><strong>Data de término:</strong> " + dataTerminoCurso  + "</li>";     
         cursoHTML += "<br>";
     });
     return cursoHTML;
@@ -269,7 +269,7 @@ function geraIdiomaHTML() {
     idiomas.forEach(function(idiomaN) {
         const { idioma, idiomaNivel} = idiomaN;
         idiomaHTML += "<li>"+ idioma + "</li>";
-        idiomaHTML += "<li>Nível: " + idiomaNivel + "</li>"  
+        idiomaHTML += "<li><strong>Nível:</strong> " + idiomaNivel + "</li>"  
         idiomaHTML += "<br>";
     });
     return idiomaHTML;
@@ -400,29 +400,29 @@ var novaPagina =
 "</section>"+
 "</div>"+
 
-"<section class='sect-formacao'>"+
+"<section class='secao'>"+
 "<h1 class='formacao'>Formação Acadêmica</h1>"+
 "<ul>"+
-"<li>Instituição: "+ instituicao.value + "</li>"+
-"<li>Curso: " + cursoFormacao.value + "</li>"+
-"<li>Data de início: " + dataInicioForm.value + "</li>"+
-"<li>Data de término: " + dataTerminoForm.value + "</li>"+
+"<li><strong>Instituição:</strong> "+ instituicao.value + "</li>"+
+"<li><strong>Curso:</strong> " + cursoFormacao.value + "</li>"+
+"<li><strong>Data de início:</strong> " + dataInicioForm.value + "</li>"+
+"<li><strong>Data de término:</strong> " + dataTerminoForm.value + "</li>"+
 "</section>"+
-"<section class= 'sect-idioma'>";
+"<section class= 'secao'>";
 if(idiomas.length >0){
     novaPagina+= "<h1 class='idioma'>Idioma</h1>" + "<ul>" + geraIdiomaHTML() + "<ul>"
 }
 "</section>"+
-"<section = 'sect-cursoE'>";
+"<section class= 'secao'>";
 if(cursoExtracurricular.length >0){
     novaPagina+= "<h1 class='curso-extra'>Cursos Extracurriculares</h1>" + "<ul>" + geraCursoExtracurricularHTML() + "<ul>"
 }
-"<section = 'sect-exp'>";
+"<section class= 'secao'>";
 if (experienciaProfissional.length > 0){
   novaPagina += "<h1 class='experienciaP'>Experiência Profissional</h1>" + "<ul>" + geraExperienciaProfissionalHTML() + "</ul>"
 }
 "</section>"
-novaPagina +="<button onclick='gerarPDF()' id= 'pdf-botao'>Download/Impressão em PDF</button>";
+novaPagina +="<button onclick='gerarPDF()' id= 'pdf-botao' class=geraPdf>Download/Impressão em PDF</button>";
 
 
 "</div>"+
